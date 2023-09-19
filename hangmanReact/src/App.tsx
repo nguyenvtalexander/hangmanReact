@@ -6,6 +6,7 @@ import words from './wordList.json'
 
 
 function App() {
+  console.log('commit test')
   const [wordToGuess, setWordToGuess] = useState(words[Math.floor(Math.random() * words.length)])
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const incorrectGuesses = guessedLetters.filter(
