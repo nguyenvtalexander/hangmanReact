@@ -1,6 +1,9 @@
-const HangmanWord = () => {
-  const word = 'test'
-  const guessedLetters = ['l', 'e']
+type HangmanWordProps = {
+  guessedLetters: string[],
+  wordToGuess: string
+}
+
+const HangmanWord: React.FC<HangmanWordProps> = ({ guessedLetters, wordToGuess }) => {
   return (
       <div 
         style={{
@@ -11,7 +14,7 @@ const HangmanWord = () => {
           textTransform: 'uppercase',
           fontFamily: 'monospace'
         }}>
-          {word.split('').map((char, idx) => (
+          {wordToGuess.split('').map((char, idx) => (
             <span style={{ borderBottom: '.1em solid black'}} key={idx}>
               <span
                 style={{
